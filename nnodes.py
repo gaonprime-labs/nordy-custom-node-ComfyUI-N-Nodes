@@ -197,11 +197,11 @@ def install_llama():
         else:
             avx="AVX"
 
-        if gpu:
-            cuda = get_cuda_version()
-            subprocess.check_call([sys.executable, "-m", "pip", "install", "llama-cpp-python", "--no-cache-dir", "--force-reinstall", "--no-deps" , f"--index-url=https://jllllll.github.io/llama-cpp-python-cuBLAS-wheels/{avx}/{cuda}"])
-        else:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", f"https://github.com/abetlen/llama-cpp-python/releases/download/v{lcpVersion}/llama_cpp_python-{lcpVersion}-{platform_tag}.whl"])
+        # if gpu:
+        #     cuda = get_cuda_version()
+        #     subprocess.check_call([sys.executable, "-m", "pip", "install", "llama-cpp-python", "--no-cache-dir", "--force-reinstall", "--no-deps" , f"--index-url=https://jllllll.github.io/llama-cpp-python-cuBLAS-wheels/{avx}/{cuda}"])
+        # else:
+        #     subprocess.check_call([sys.executable, "-m", "pip", "install", f"https://github.com/abetlen/llama-cpp-python/releases/download/v{lcpVersion}/llama_cpp_python-{lcpVersion}-{platform_tag}.whl"])
     except Exception as e:
         print(f"Error while installing LLAMA: {e}")
 # llama wheels https://github.com/jllllll/llama-cpp-python-cuBLAS-wheels
